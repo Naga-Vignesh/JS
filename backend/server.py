@@ -850,10 +850,10 @@ async def seed_admin():
     memory_dir.mkdir(parents=True, exist_ok=True)
 
     with open(memory_dir / "test_credentials.md", "w") as f:
-    f.write(f"# Test Credentials\n\n")
-    f.write(f"## Admin\n- Email: {admin_email}\n- Password: {admin_password}\n- Role: admin\n\n")
-    f.write(f"## Test Business Customer\n- Email: chef@testrestaurant.com\n- Password: ChefTest2024!\n- Role: business_customer\n\n")
-    f.write(f"## Auth Endpoints\n- POST /api/auth/register\n- POST /api/auth/login\n- POST /api/auth/logout\n- GET /api/auth/me\n- POST /api/auth/session (Google Auth)\n")
+        f.write(f"# Test Credentials\n\n")
+        f.write(f"## Admin\n- Email: {admin_email}\n- Password: {admin_password}\n- Role: admin\n\n")
+        f.write(f"## Test Business Customer\n- Email: chef@testrestaurant.com\n- Password: ChefTest2024!\n- Role: business_customer\n\n")
+        f.write(f"## Auth Endpoints\n- POST /api/auth/register\n- POST /api/auth/login\n- POST /api/auth/logout\n- GET /api/auth/me\n- POST /api/auth/session (Google Auth)\n")
 async def seed_test_customer():
     email = "chef@testrestaurant.com"
     existing = await db.users.find_one({"email": email})
