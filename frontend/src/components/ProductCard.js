@@ -54,10 +54,10 @@ export default function ProductCard({ product, onAddToCart }) {
           {!isOut && (
             <button
               onClick={(e) => { e.stopPropagation(); onAddToCart?.(product); }}
-              className="p-1.5 bg-[#D4AF37] hover:bg-[#e6c24d] rounded-sm transition-colors"
+              className="flex items-center gap-1.5 px-2.5 py-1 bg-[#D4AF37] hover:bg-[#e6c24d] rounded-sm transition-colors text-[10px] font-semibold text-[#1A1A1A]"
               data-testid={`add-to-cart-${product.product_id}`}
             >
-              <ShoppingCart className="w-3.5 h-3.5 text-[#1A1A1A]" />
+              <ShoppingCart className="w-3 h-3" /> ADD
             </button>
           )}
         </div>

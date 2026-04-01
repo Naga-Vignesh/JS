@@ -38,9 +38,10 @@ export default function AdminDashboard() {
 
   const fetchAll = useCallback(async () => {
     try {
+      const statusParam = statusFilter && statusFilter !== "all" ? `&status=${statusFilter}` : "";
       const [analyticsRes, ordersRes, customersRes, inventoryRes] = await Promise.all([
         api.get("/admin/analytics"),
-        api.get(`/admin/orders?limit=50${statusFilter ? `&status=${statusFilter}` : ""}`),
+        api.get(`/admin/orders?limit=50${statusParam}`),
         api.get("/admin/customers"),
         api.get("/admin/inventory"),
       ]);
