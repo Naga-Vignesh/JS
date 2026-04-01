@@ -1,0 +1,97 @@
+{
+  "theme": "dark",
+  "archetype": "5 (Jewel & Luxury)",
+  "colors": {
+    "background": "#1A1A1A",
+    "foreground": "#FFFFFF",
+    "primary": "#D4AF37",
+    "primary_foreground": "#1A1A1A",
+    "secondary": "#2A2A2A",
+    "secondary_foreground": "#F5F5F5",
+    "accent": "#242424",
+    "accent_foreground": "#D4AF37",
+    "border": "rgba(255, 255, 255, 0.1)",
+    "muted": "#333333",
+    "muted_foreground": "#A3A3A3",
+    "success": "#2E7D32",
+    "error": "#D32F2F"
+  },
+  "typography": {
+    "headings": {
+      "font_family": "Chivo",
+      "weights": ["700", "800", "900"],
+      "strategy": "Bold, industrial yet premium sans-serif. Tracking tight. Never use Inter for headings."
+    },
+    "body": {
+      "font_family": "Inter",
+      "weights": ["400", "500", "600"],
+      "strategy": "Clean, highly readable sans-serif for data-dense bulk ordering and B2B tables."
+    },
+    "mono": {
+      "font_family": "JetBrains Mono",
+      "strategy": "Use for SKUs, pricing data, and inventory alerts to align with the 'Industrial' feel."
+    }
+  },
+  "layout_and_spacing": {
+    "marketing_pages": "Bento grids, generous spacing (p-12 to p-24), asymmetrical layouts for Hero and Featured Products.",
+    "dashboard_and_b2b": "The 'Control Room' Grid. Strict hierarchy, dense data tables (p-4 to p-6). Full utilization of horizontal space for bulk requisition lists.",
+    "borders_and_surfaces": "Grid Borders (Technical Look) with 1px border-white/10. Avoid heavy drop shadows; rely on crisp 1px borders and slight background lightness variations for elevation."
+  },
+  "components": {
+    "buttons": "Flat, sharp corners or rounded-sm. Primary buttons use Warm Gold (#D4AF37) with Dark Charcoal text. Hover state must maintain high contrast (e.g., hover:bg-[#e6c24d]).",
+    "cards": "Minimalist, cardless approach where possible, or extremely flat surfaces with 1px border. No muddy gray shadows.",
+    "tables": "Shadcn Table customized. Monospaced numbers for SKUs and Prices. Hover rows clearly highlighted in #2A2A2A.",
+    "inputs": "Shadcn inputs with transparent background, #2A2A2A on focus, sharp gold ring on focus."
+  },
+  "interactions_and_motion": {
+    "hover_states": "Subtle background shifts (e.g., bg-black/20 to bg-white/10) with crisp text color changes.",
+    "transitions": "Fast and industrial (150ms ease-in-out). Avoid long floaty animations.",
+    "loading": "Skeleton loaders matching the dark charcoal theme, or monospaced text loaders (e.g., 'FETCHING SKUS...')."
+  },
+  "image_urls": {
+    "hero_background": {
+      "url": "https://images.pexels.com/photos/13343442/pexels-photo-13343442.jpeg",
+      "description": "Dimly lit restaurant kitchen featuring a chef at work, creating an intimate atmosphere.",
+      "category": "hero"
+    },
+    "product_category_1": {
+      "url": "https://images.unsplash.com/photo-1625604086988-6e41981275fa?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzNDR8MHwxfHNlYXJjaHwzfHxyYXclMjBtZWF0JTIwZGFyayUyMGJhY2tncm91bmR8ZW58MHx8fHwxNzc1MDUzNTA5fDA&ixlib=rb-4.1.0&q=85",
+      "description": "Premium sliced meat on black wooden table",
+      "category": "product"
+    },
+    "product_category_2": {
+      "url": "https://images.pexels.com/photos/6824312/pexels-photo-6824312.jpeg",
+      "description": "Close-up of wooden bowls with flour and almonds, surrounded by fresh spinach and eggs on a dark surface.",
+      "category": "product"
+    },
+    "product_category_3": {
+      "url": "https://images.pexels.com/photos/6834162/pexels-photo-6834162.jpeg",
+      "description": "Close-up of organic matcha powder scattered on a dark background.",
+      "category": "product"
+    },
+    "partner_logo_1": {
+      "url": "https://images.pexels.com/photos/9949424/pexels-photo-9949424.jpeg",
+      "description": "A vibrant retro Apple logo with rainbow colors on a sleek black background.",
+      "category": "logo"
+    }
+  },
+  "accessibility_and_testing": {
+    "contrast": "Ensure text over dark backgrounds meets APCA standards. Use text-white for primary text, text-gray-400 for secondary.",
+    "data_testid": "All interactive elements (buttons, inputs, links, tabs, tables) MUST include descriptive data-testid attributes (e.g., 'bulk-add-to-cart-button').",
+    "focus_rings": "Highly visible focus rings (Warm Gold, ring-2) on all keyboard-navigable elements."
+  },
+  "iconography": {
+    "library": "lucide-react",
+    "style": "Crisp, 1.5px stroke width. Unfilled unless active. Technical and sharp."
+  },
+  "instructions_to_main_agent": [
+    "Strictly adhere to the dark theme using #1A1A1A as the main background.",
+    "Implement the Layout using standard Tailwind CSS classes.",
+    "Install and use Chivo for all H1-H4 headings from Google Fonts (@import or next/font). Keep tracking tight.",
+    "Use Inter for body text and JetBrains Mono for SKUs, amounts, and numeric tabular data.",
+    "Implement Shadcn UI extensively for the B2B catalog, requisition lists, and admin dashboard.",
+    "Do NOT use HTML <select> or native <input type='date'>. Use Shadcn Dropdown/Select and Calendar.",
+    "Ensure the hero section uses the provided image with a max opacity bg-black/50 overlay to maintain visual richness.",
+    "For the Bulk Ordering / Requisition List, use a dense table layout (py-2 px-3 cells) with monospaced SKUs and input fields directly in the table rows for quick quantity adjustments."
+  ]
+}
