@@ -46,7 +46,9 @@ export default function ProductsPage() {
         setProducts(data.products || []);
         setTotal(data.total || 0);
         setPages(data.pages || 1);
-      } catch { /* ignore */ }
+      } } catch (err) {
+          console.error("Failed to load products:", err?.response?.data || err.message || err);
+        }
       setLoading(false);
     };
     load();
