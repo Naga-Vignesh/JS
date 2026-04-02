@@ -896,10 +896,16 @@ app.include_router(api_router)
 
 # CORS - handle both development and production
 frontend_url = os.environ.get("FRONTEND_URL", "http://localhost:3000")
-origins = [frontend_url, "http://localhost:3000"]
+origins = ["http://localhost:3000"]
+
+if frontend_url:
+    origins.append(frontend_url)
+
 cors_raw = os.environ.get("CORS_ORIGINS", "")
-if cors_raw and cors_raw != "*":
+if cors_raw:
     origins.extend([o.strip() for o in cors_raw.split(",") if o.strip()])
+
+origins = list(dict.fromkeys(origins))  # remove duplicates
 
 app.add_middleware(
     CORSMiddleware,
